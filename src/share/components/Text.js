@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import variable from '@variables';
 const heading = {
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: variable.color.black,
 };
 function Heading1({ children, headingStyle }) {
@@ -23,7 +23,7 @@ function TextGrey({ children, textStyle }) {
 function TextPrimary({ children, textStyle }) {
     return (
         <Text
-            style={[{ color: variable.color.primary, fontSize: 16, fontWeight: 'bold' }, textStyle]}
+            style={[{ color: variable.color.primary, fontSize: 16, fontWeight: '600' }, textStyle]}
         >
             {children}
         </Text>
@@ -36,12 +36,14 @@ function TextWhite({ children, textStyle }) {
 }
 function TextBold({ children, textStyle }) {
     return (
-        <Text
-            style={[{ color: variable.color.black, fontWeight: 'bold', fontSize: 16 }, textStyle]}
-        >
+        <Text style={[{ color: variable.color.black, fontWeight: '600', fontSize: 16 }, textStyle]}>
             {children}
         </Text>
     );
 }
-
-export { Heading1, Heading2, Heading3, TextPrimary, TextBold, TextGrey, TextWhite };
+function TextSmall({ children, textStyle }) {
+    return (
+        <Text style={[{ color: variable.color.black, fontSize: 13 }, textStyle]}>{children}</Text>
+    );
+}
+export { Heading1, Heading2, Heading3, TextPrimary, TextBold, TextGrey, TextWhite, TextSmall };

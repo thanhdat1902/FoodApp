@@ -13,6 +13,8 @@ import {
     TextGrey,
     TextPrimary,
     TextWhite,
+    Background,
+    TextSmall,
 } from '@share';
 import styles from '@variables';
 import { useEffect } from 'react';
@@ -36,14 +38,7 @@ const Home = ({ navigation }) => {
             }}
         >
             {/* Background part */}
-            <Image
-                source={homeBackground}
-                style={{
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                }}
-            ></Image>
+            <Background source={homeBackground}></Background>
             <LinearGradient
                 colors={['#00000000', '#00000075']}
                 style={{
@@ -75,7 +70,9 @@ const Home = ({ navigation }) => {
             {/* Welcome to Food Hub */}
             <Container viewStyle={{ marginTop: 100, marginBottom: 150 }}>
                 <Heading1>Welcome to</Heading1>
-                <Heading2 headingStyle={{ color: styles.color.primary }}>Food Hub</Heading2>
+                <Heading2 headingStyle={{ color: styles.color.primary, fontWeight: 'bold' }}>
+                    Food Hub
+                </Heading2>
                 <TextGrey>Your favourite foods delivered fast at your door</TextGrey>
             </Container>
 
@@ -119,7 +116,10 @@ const Home = ({ navigation }) => {
                                     name="facebook"
                                     type="MaterialIcons"
                                 ></Icon>
-                                <TextBold> FACEBOOK</TextBold>
+                                <TextSmall textStyle={{ letterSpacing: 0.5, fontWeight: '700' }}>
+                                    {'  '}
+                                    FACEBOOK
+                                </TextSmall>
                             </View>
                         </Button>
                     </View>
@@ -139,7 +139,10 @@ const Home = ({ navigation }) => {
                                     name="google-plus-square"
                                     type="MaterialIcons"
                                 ></Icon>
-                                <TextBold> GOOGLE</TextBold>
+                                <TextSmall textStyle={{ letterSpacing: 0.5, fontWeight: '700' }}>
+                                    {'  '}
+                                    FACEBOOK
+                                </TextSmall>
                             </View>
                         </Button>
                     </View>

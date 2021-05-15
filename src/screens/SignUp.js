@@ -19,24 +19,19 @@ import auth from '../../assets/img/auth.png';
 import styles from '@variables';
 import { useState } from 'react';
 
-const Login = ({ navigation }) => {
+const SignUp = ({ navigation }) => {
     const [showPassword, setShowPassword] = useState(true);
     useEffect(() => {
         navigation.setOptions({
             headerShown: false,
         });
     }, []);
-    const handleToSignUp = () => {
-        navigation.push('SignUp');
+    const handleToLogin = () => {
+        navigation.push('Login');
     };
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                }}
-            >
+            <View style={{ flex: 1, justifyContent: 'center' }}>
                 <Background
                     source={auth}
                     style={{
@@ -45,7 +40,9 @@ const Login = ({ navigation }) => {
                     }}
                 ></Background>
                 <Container>
-                    <Heading1>Login</Heading1>
+                    <Heading1>Sign Up</Heading1>
+                    <TextGrey textStyle={{ marginTop: 20 }}>Full name</TextGrey>
+                    <Input placeholder="Your full name" />
                     <TextGrey>Email</TextGrey>
                     <Input placeholder="Your email or phone" />
                     <TextGrey>Password</TextGrey>
@@ -76,7 +73,7 @@ const Login = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                     <Button buttonStyle={{ backgroundColor: styles.color.primary, marginTop: 30 }}>
-                        <TextWhite> LOG IN</TextWhite>
+                        <TextWhite>SIGN UP</TextWhite>
                     </Button>
                     <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'center' }}>
                         <TextGrey
@@ -84,9 +81,9 @@ const Login = ({ navigation }) => {
                                 textAlign: 'center',
                             }}
                         >
-                            Don't have an account?
+                            Already have an account?
                         </TextGrey>
-                        <TouchableOpacity onPress={handleToSignUp}>
+                        <TouchableOpacity onPress={handleToLogin}>
                             <TextPrimary
                                 textStyle={{
                                     paddingLeft: 10,
@@ -94,7 +91,7 @@ const Login = ({ navigation }) => {
                                     textDecorationLine: 'underline',
                                 }}
                             >
-                                Sign-up
+                                Login
                             </TextPrimary>
                         </TouchableOpacity>
                     </View>
@@ -183,4 +180,4 @@ const Login = ({ navigation }) => {
     );
 };
 
-export default Login;
+export default SignUp;
